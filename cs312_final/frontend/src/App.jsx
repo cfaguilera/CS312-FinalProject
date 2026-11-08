@@ -36,6 +36,43 @@ function App() {
         </div>
         <br></br>
         <button className='playButton'></button>
+        <br/>
+        <br/>
+
+        <div className="reviewSection">
+          <div className="reviewSort">
+            <button id="sortButton">Sort</button>
+            <select name='sorting' id='listing' aria-label="Sort reviews by">
+              <option value="rating">Rating</option>
+              <option value="helpfulness">Likes</option>
+            </select>
+          </div>
+          <h1>Reviews</h1>
+          <button id='makeReview'>Add your own Review</button>
+        </div>
+        <br />
+        <br/>
+
+        <div className='reviews'>
+          <div id='review'>
+            <div id='reviewTop'>
+              <h2 id='reviewAuthor'>Author</h2>
+              <h2 id="reviewTitle">Review title</h2>
+              <div className='reviewRating'>
+                <span className='starFilled'>★</span>
+                <span className='starFilled'>★</span>
+                <span className='starFilled'>★</span>
+                <span className='starEmpty'>☆</span>
+                <span className='starEmpty'>☆</span>
+
+              </div>
+            </div>
+            <div id='reviewBottom'>
+              <p id='reviewPG'>hello this is a fake review this movie was amazing the CGI was so good!</p>
+            </div>
+          </div>
+        </div>
+
       </main>
     </>
   )

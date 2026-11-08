@@ -272,7 +272,116 @@ body {
   transform: translateX(1px);
 }
 
+.reviewSection {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+}
+
+.reviewSort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+#sortButton {
+  width: 100px;
+  height: 50px;
+  color: lightskyblue;
+  background-color: transparent;
+}
+
+#listing {
+  width: 100px;
+  height: 30px;
+  color: lightskyblue;
+  border: none;
+}
+
+/* Review */
+#makeReview {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  color: lightskyblue;
+  background-color: transparent;
+}
+
+.reviews {
+  border: 2px solid lightgreen;
+  width: 50%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: 200px;
+  padding: 20px;
+}
+
+#review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 156px;
+}
+
+#reviewTop {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  width: 100%;
+}
+
+#reviewAuthor {
+  grid-column: 1;
+  text-align: left;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+#reviewTitle {
+  grid-column: 2;
+  text-align: center;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+#reviewBottom {
+  text-align: center;
+  width: 100%;
+}
+
+
+#reviewPG {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.reviewRating {
+  display: inline-flex;
+  gap: 4px;
+  font-size: 2rem;
+}
+
+.starFilled {
+  color: #fc0;
+}
+
+.starEmpty {
+  color: #d3d3d3
+}
+
+
 @media (max-width: 600px) {
+  .reviews {
+    width: calc(100% - 40px);
+  }
+
   .movieRow {
     flex-direction: column;
     align-items: center;
