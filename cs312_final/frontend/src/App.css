@@ -224,6 +224,19 @@ body {
   color: white;
 }
 
+.movieDetails {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+#movieTitle {
+  text-align: center;
+  margin: 0;
+}
+
 #movieItems {
   flex: 1;
   min-width: 0;
@@ -392,6 +405,7 @@ body {
     width: 100%;
   }
 
+  .movieDetails,
   #movieItems {
     width: 100%;
   }

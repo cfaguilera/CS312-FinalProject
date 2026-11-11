@@ -1,5 +1,6 @@
 import NavBar from "../components/navBar";
 import { useNavigate } from "react-router-dom";
+import MovieInfo from '../components/movieInfo';
 
 function HomePage() {
     const navigate = useNavigate();
@@ -16,10 +17,9 @@ function HomePage() {
         <div className='movieRow'>
           <img id ="movieImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjodBduG4MZ7tlNTS0dV9RC8ZhNoEqQWNjHyZ5wSOE2A&s=10"
            alt="Hero"/> 
-           <div id="movieItems">
-          <h2>Movie Title here</h2> 
-          <p> Movie rating: here</p>
-          <p> Movie description: here</p>
+           <div className="movieDetails">
+            <h2 id="movieTitle">Movie Title here</h2>
+            <MovieInfo/>
           </div>
 
         </div>
