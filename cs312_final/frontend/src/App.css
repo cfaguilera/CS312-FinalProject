@@ -167,10 +167,38 @@
 /* Nav Bar */
 nav {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
   margin-top: 10px;
-  justify-content: center;
+  padding: 0 clamp(20px, 6vw, 100px);
   border: 2px transparent var(--border);
   position: relative;
+}
+
+#signins {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-left: auto;
+  max-width: 100%;
+}
+
+#signins a {
+  color: lightskyblue;
+  text-decoration: none;
+}
+
+#signins a:hover {
+  text-decoration: underline;
 }
 
 /* left of nav bar */
@@ -178,14 +206,11 @@ nav {
   font-size: 30px;
   font-weight: bold;
   color: lightskyblue;
-  position: absolute;
-  left: 120px;
+  text-decoration: none;
 
 }
 
 #navCatalog {
-  position: absolute;
-  left: 450px;
   font-size: 22px;
   font-weight: bold;
   color: lightskyblue;
@@ -194,9 +219,15 @@ nav {
   padding: 5px 10px;
 }
 
+#navCatalog:hover {
+  cursor: pointer;
+}
+
 #navSearch {
-  right: 100px;
-  position: absolute;
+  width: 200px;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   font-size: 18px;
 }
 
