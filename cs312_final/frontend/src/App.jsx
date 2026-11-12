@@ -6,6 +6,7 @@ import WebPlayer from './pages/webPlayer.jsx';
 import SignUp from './pages/signup.jsx';
 import SignIn from './pages/signin.jsx';
 import Catalog from './pages/catalog.jsx';
+import Search from './pages/search.jsx';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/signin' element={<SignIn/>}/>
         <Route path='/catalog' element={<Catalog/>}/>
+        <Route path='/search' element={<Search/>}/>
 
       </Routes>
     </BrowserRouter>

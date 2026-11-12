@@ -29,9 +29,9 @@ function HomePage() {
         <br/>
 
         <div className="reviewSection">
-          <div className="reviewSort">
-            <button id="sortButton">Sort</button>
-            <select name='sorting' id='listing' aria-label="Sort reviews by">
+          <div className="reviewSort sortControls">
+            <button id="sortButton" className="sortButton" type="button">Sort</button>
+            <select className="sortSelect" name='sorting' id='listing' aria-label="Sort reviews by">
               <option value="rating">Rating</option>
               <option value="helpfulness">Likes</option>
             </select>

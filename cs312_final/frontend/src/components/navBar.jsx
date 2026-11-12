@@ -12,7 +12,10 @@ function NavBar() {
               <Link to="/signup">Sign up</Link>
               <Link to="/signin">Sign in</Link>
             </div>
-            <input id="navSearch" type="search" placeholder="Search" aria-label="Search"/>
+            <form className="navSearchForm" role="search" action="/search" method="get">
+              <input id="navSearch" type="search" placeholder="Search..." aria-label="Search movies" name="q"/>
+              <button type="submit" id="searchButton" onClick={function() {navigate("/search")}}>Search</button>
+            </form>
           </div>
         </nav>
     </div>
