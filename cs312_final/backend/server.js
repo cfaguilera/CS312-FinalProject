@@ -23,7 +23,6 @@ app.use(bodyParser.json());
 
 app.post("/getmovie", async (req, res) => {
 
-    console.log("cALLED: " + req.body.movie_id)
     let thisMovie = await streamDB.query("SELECT * FROM movies WHERE movie_id='" + req.body.movie_id + "'");
     //res.json(thisMovie)
     //console.log(thisMovie.rows[0])
