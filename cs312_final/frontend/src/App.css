@@ -319,7 +319,8 @@ nav {
 /* Body */
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--heading);
   font-weight: 500;
   color: lightskyblue;
@@ -566,4 +567,26 @@ body {
   }
 }
 
+/* Catalog */
 
+.movieCatalog {
+  display: flex;
+  align-self: center;
+  width: 90%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 100px 150px;
+  justify-content: space-evenly;
+}
+
+.movieCard {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#catalogMovieImage {
+  width: 125px;
+  height: 175px;
+  align-self: center;
+}
