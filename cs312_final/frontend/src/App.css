@@ -419,6 +419,14 @@ body {
   flex-shrink: 0;
 }
 
+
+
+.questionaaireSort {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
 .sortButton,
 .sortSelect {
   min-height: 42px;
