@@ -16,7 +16,7 @@ function HomePage(props) {
         <br/>
         <h1>Welcome to Boomer Streaming {props.user}</h1>
         <br />
-        <MovieRow id={currMovie} />
+        {/*<MovieRow id={currMovie} /> */}
         <div className='movieRow'>
           <img id ="movieImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjodBduG4MZ7tlNTS0dV9RC8ZhNoEqQWNjHyZ5wSOE2A&s=10"
            alt="Hero"/> 
