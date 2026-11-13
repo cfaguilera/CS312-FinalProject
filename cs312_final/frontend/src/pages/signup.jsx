@@ -23,7 +23,7 @@ function SignUp() {
         axios.post("http://localhost:8000/signup", info).then((res) => {
             console.log(res.data);
         })
-        navigate('/')
+        navigate('/questionaaire')
         
     }
     
