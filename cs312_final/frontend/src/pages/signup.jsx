@@ -1,7 +1,10 @@
 import NavBar from "../components/navBar";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 function SignUp() {
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState("");
     function changeUsernameInput(event) {
@@ -20,7 +23,7 @@ function SignUp() {
         axios.post("http://localhost:8000/signup", info).then((res) => {
             console.log(res.data);
         })
-
+        navigate('/')
         
     }
     
@@ -44,7 +47,7 @@ function SignUp() {
             />
             <br/>
             <br/>
-            <button onClick={trySignup}>Create Account</button>
+            <button className="sortButton" onClick={trySignup}>Create Account</button>
         </div>
     )
 }

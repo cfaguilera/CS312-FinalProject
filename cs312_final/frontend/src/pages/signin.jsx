@@ -2,6 +2,7 @@ import NavBar from "../components/navBar";
 import { useState } from "react";
 import axios from "axios";
 function SignIn() {
+
     const [username, setUsername] = useState("");
     function changeUsernameInput(event) {
         setUsername(event.target.value);
@@ -23,7 +24,7 @@ function SignIn() {
         
     }
     return (
-        <>
+        <div>
             <NavBar />
             <h1>Log in</h1>
             <h2>Username</h2>
@@ -42,8 +43,8 @@ function SignIn() {
             />
             <br/>
             <br/>
-            <button onClick={tryLogin}>Log In</button>
-        </>
+            <button className="sortButton" onClick={tryLogin}>Log In</button>
+        </div>
     )
 }
 
