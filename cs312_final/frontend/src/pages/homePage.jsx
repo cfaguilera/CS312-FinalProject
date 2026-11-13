@@ -1,19 +1,22 @@
 import NavBar from "../components/navBar";
 import { useNavigate } from "react-router-dom";
 import MovieInfo from '../components/movieInfo';
-
-function HomePage() {
+import { MovieRow } from "../components/movies.jsx";
+function HomePage(props) {
     const navigate = useNavigate();
+    const currMovie = 1;
     return (
         <>
-      <NavBar />
+      <NavBar 
+      user={props.user}
+      />
 
       <main>
         <br/>
         <br/>
-        <h1>Welcome to Boomer Streaming</h1>
+        <h1>Welcome to Boomer Streaming {props.user}</h1>
         <br />
-
+        <MovieRow id={currMovie} />
         <div className='movieRow'>
           <img id ="movieImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjodBduG4MZ7tlNTS0dV9RC8ZhNoEqQWNjHyZ5wSOE2A&s=10"
            alt="Hero"/> 
@@ -24,7 +27,7 @@ function HomePage() {
 
         </div>
         <br/>
-        <button className="playButton" onClick={function() {navigate("/watch")}}></button>
+        <button className="playButton" onClick={function() {navigate(`/watch/${currMovie}`)}}></button>
         <br/>
         <br/>
 

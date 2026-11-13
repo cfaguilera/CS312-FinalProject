@@ -23,10 +23,10 @@ app.use(bodyParser.json());
 
 app.post("/getmovie", async (req, res) => {
 
-    console.log("cALLED")
+    console.log("cALLED: " + req.body.movie_id)
     let thisMovie = await streamDB.query("SELECT * FROM movies WHERE movie_id='" + req.body.movie_id + "'");
     //res.json(thisMovie)
-    console.log(thisMovie)
+    //console.log(thisMovie.rows[0])
     let test = {
         "title": "movie title",
         "desc": "movie desc",
@@ -38,7 +38,48 @@ app.post("/getmovie", async (req, res) => {
 
 });
 
+app.post("/signup", async (req, res) => {
+    let isValid = await streamDB.query("SELECT * FROM users WHERE username='" + req.body.username + "'");
+    if (isValid.rows == undefined || req.body.pw == "")
+    {
+        console.log("username exists")
+        res.json({"valid": "false"});
+    }
+    else
+    {
+        res.json({"valid": "true"});
+        await streamDB.query("INSERT INTO users (username, genrepref, password) VALUES ($1, $2, $3)", [req.body.username, null, req.body.password]);
+    }
+})
 
+app.post("/login", async (req, res) => {
+    let validName = await streamDB.query("SELECT * FROM users WHERE username='" + req.body.username + "'");
+    let correctPw = await streamDB.query("SELECT password FROM users WHERE username='" + req.body.username + "'");
+    if (correctPw != undefined)
+    {
+        //console.log(correctPw.rows[0].password)
+    }
+    
+    if (validName.rows == undefined)
+    {
+        console.log("Invalid Username")
+        return;
+    }
+    else
+    {
+        let correctPw = await streamDB.query("SELECT password FROM users WHERE username='" + req.body.username + "'");
+        if (correctPw.rows != undefined)
+        {
+            if (correctPw.rows[0].password == req.body.password)
+            {
+                res.json({"valid": "true"});
+            }
+        }
+        
+    }
+    res.json({"valid": "false"});
+
+})
 
 
 
