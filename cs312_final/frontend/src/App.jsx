@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<HomePage/>}/>
-        <Route path='/watch' element={<WebPlayer/>}/>
+        <Route path="/watch/:mov" element={<WebPlayer/>}/>
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/signin' element={<SignIn/>}/>
         <Route path='/catalog' element={<Catalog/>}/>

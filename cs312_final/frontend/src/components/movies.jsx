@@ -36,5 +36,31 @@ function MovieRow(props)
          </div>
     )
 }
+function MoviePlayer(props)
+{
+    const [movie, setMovie] = useState({});
+    let info = {
+        movie_id: props.id
+    }
 
-export {MovieRow}
+    useEffect(() => {
+        axios.post("http://localhost:8000/getmovie", info).then((res) => {
+            setMovie(res.data)
+        })
+    }, [])
+
+    return (
+        <div>
+        {(typeof thisMovie === undefined) ? (
+                <p>Loading movie...</p>
+            ) : (
+        <div>
+            <h2>{movie.title}</h2>
+                <video width="90%" height="50%" controls
+                    source src={movie.vid} type="video/mp4" id="MovieSource"/>
+                </div>
+            )}
+        </div>
+    )
+}
+export {MovieRow, MoviePlayer}
